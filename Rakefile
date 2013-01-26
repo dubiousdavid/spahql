@@ -52,7 +52,7 @@ task :build do |t, args|
   File.open(concat_target, "w") {|f| f.write concat_js }
 
   puts "Building from #{pwd}/spahql.js to #{compile_target}"
-  `java -jar ~/Downloads/compiler.jar --js #{concat_target} --js_output_file #{compile_target}`
+  `java -jar #{pwd}/compiler.jar --js #{concat_target} --js_output_file #{compile_target}`
 end
 
 desc "Runs lint against the client's javascript source. Defaults to the Google Closure linter."
